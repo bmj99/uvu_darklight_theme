@@ -1,0 +1,116 @@
+/* .hidden {
+  display: none;
+} */
+
+/* body {
+  background-color: #121212;
+}
+
+.logEntry:hover,
+button:hover {
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+form {
+  padding: 10%;
+  font-family: sans-serif;
+  font-size: large;
+  border-radius: 3px;
+  color: #ac4ddb;
+}
+
+#uvuId {
+  display: none;
+}
+
+#uvuIdDiv,
+#logsDisplayDiv,
+#newLogDiv {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+#courseDiv {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 3px;
+}
+
+#logsDisplayDiv {
+  padding-bottom: 20px;
+  margin-bottom: 10%;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+h3 {
+  font-size: 24px;
+  padding: 5% 5% 3px 40px;
+}
+
+label {
+  font-size: 22px;
+  padding: 40px;
+}
+
+input,
+textarea,
+button,
+#course {
+  padding: 2%;
+  border-radius: 3px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  border-left: 3px solid #ac4ddb;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-right: 40px;
+  padding: 5px;
+}
+
+li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#course {
+  color: gray;
+  background-color: white;
+  padding: 5px;
+}
+
+button {
+  background-color: #ac4ddb;
+  border-radius: 3px;
+  margin: 0px 0px 30px 40px;
+  color: #121212;
+  border: none;
+}
+
+#course,
+#uvuId,
+#newLogText {
+  background-color: #ffffff;
+}
+
+#course,
+#uvuId {
+  width: 200px;
+}
+
+textarea {
+  margin: 0px 40px 20px 40px;
+  width: 80%;
+} */

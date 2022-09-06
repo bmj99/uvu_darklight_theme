@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Student Log</title>
+    <meta charset="UTF-8" />
+    <!-- Black shadow -->
+    <!-- <link rel="icon" href="https://i.imgur.com/HzPXa9x.png" />  -->
+    <!-- White shadow -->
+    <link rel="icon" href="https://i.imgur.com/xU6O2NI.png" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
+  <body onload="testMe()" class="font-sans bg-gray-700">
+    <form class="m-10 md:m-20">
+      <div id="courseDiv" class="md:flex">
+        <select
+          aria-label="Select Course"
+          id="course"
+          name="course"
+          data-cy="course_select"
+          class="p-3 bg-purple-400 rounded mr-5 mb-5"
+        >
+          <option selected value="">Choose Course</option>
+        </select>
+
+        <input
+          type="text"
+          id="uvuId"
+          name="uvuId"
+          value=""
+          data-cy="uvuId_input"
+          placeholder="UVU ID . . ."
+          class="p-3 bg-purple-400 hidden rounded placeholder-gray-500 mb-5"
+        />
+      </div>
+      <!-- <br /> -->
+      <!-- <div class="lg:flex"> -->
+      <div id="logsDisplayDiv" class="p-3 bg-purple-400 rounded mb-5">
+        <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="pb-3 text-xl">
+          Student Logs
+        </h3>
+        <ul id="logsDisplay" data-cy="logs"></ul>
+      </div>
+
+      <div id="newLogDiv" class="p-3 bg-purple-400 rounded">
+        <h3 class="pb-3 text-xl">New Log</h3>
+        <textarea
+          id="newLogText"
+          style="height: 75px"
+          aria-label="add log textarea"
+          data-cy="log_textarea"
+          placeholder="Today, I ..."
+          class="p-3 rounded bg-purple-200 border-l-4 border-purple-500 w-full"
+        ></textarea>
+        <br />
+
+        <button
+          type="button"
+          id="addLogBtn"
+          data-cy="add_log_btn"
+          class="rounded bg-purple-500 p-2 hover:bg-purple-600"
+          disabled
+        >
+          Add Log
+        </button>
+      </div>
+      <!-- </div> -->
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="jQL.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="test_script.js"></script> -->
+  </body>
+</html>
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- Tailwind Axios jQueryLite Requirements -->
+<!-- ------------------------------------------------------------------------------ -->
+
+<!-- TODO: 7. Strip out all your custom CSS. Use only Tailwind for styling. Use a CDN. Do a different style GUI from your Vanilla Practicum. We want to see you have variety. -->
+<!-- TODO: 8. Strip out your fetch code. Use Axios instead. -->
+<!-- DONE: 9. Write and use your own lite version of jQuery. -->
+<!-- DONE: 10. Create and use your own favicon. (StackBlitz does not allow pictures to be uploaded, so I used imgur instead) -->
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- Vanilla Requirements: -->
+<!-- ------------------------------------------------------------------------------ -->
+
+<!-- TODO: move all TODOs that done above to down below here and change the label to DONE:. -->
+<!-- DONE: set the lang attribute to American English -->
+<!-- DONE: set the characterset to utf8 -->
+<!-- DONE: temporarily use stackoverflow's favicon. "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"-->
+<!-- DONE: Load your CSS file -->
+<!-- DONE: The following options are currently static values to show you sample data.  -->
+<!-- DONE: Don't show the uvu id text input box until a course was selected above. -->
+<!-- DONE: If course ever becomes unselected, don't show the uvu id text input box.-->
+<!-- DONE: write `10234567` as sample data on the input field below  -->
+<!-- DONE: Ensure the character length never exceeds 8 -->
+<!-- DONE: Only numbers, no letters or other characters-->
+<!-- DONE: When character length reaches 8 and it's only digits, fire off ajax request, if 200 or 304, display results, else appropriately guide the user. -->
+<!-- DONE: The following options are currently static values to show you an example.  -->
+<!-- You must replace them with dynamic data by ajaxing GET https://json-server-ft3qa5--3000.local.webcontainer.io/logs?courseId=<courseID>&uvuId=<uvuID> -->
+<!-- DONE: Click anywhere on the log to toggle visibility of the log (text only, not the date)-->
+<!-- DONE: Button should be disabled until there are logs displayed -->
+<!-- DONE: When the button is clicked, -->
+<!--   1. Use fetch to POST the new log above and  -->
+<!--   2. Add it to the displayed list -->
+<!-- DONE: Script tag to your javascript file -->
+<!-- DONE: add appropriate comments you feel are necessary, if any, for the next coder to understand -->
+<!-- DONE: make it look awesome. */
+/*   DONE: make it responsive. */ -->
+<!-- DONE: Wire up the app's behavior here.
+//   DONE: The TODOs are listed in index.html -->
