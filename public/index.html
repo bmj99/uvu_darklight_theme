@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
-  <body onload="testMe()" class="font-sans bg-uvu dark:bg-red-400">
+  <body onload="testMe()" class="font-sans bg-uvu-green dark:bg-uvu-grey-d2">
     <form class="m-10 md:m-20">
       <div id="courseDiv" class="md:flex">
         <select
@@ -125,10 +125,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        dark: 'class',
         theme: {
           extend: {
             colors: {
-              uvu: '#275d38',
+              'uvu-green': '#275d38',
+              'uvu-green-l3': '#6f937a',
+              'uvu-green-l2': '#578164',
+              'uvu-green-l1': '#3f6f4e',
+              'uvu-green-d1': '#235332',
+              'uvu-green-d2': '#1e482c',
+              'uvu-grey': '#e8e8e8',
+              'uvu-grey-l1': '#f9f9f9',
+              'uvu-grey-d1': '#545454',
+              'uvu-grey-d2': '#b2b2b2',
             },
           },
         },
