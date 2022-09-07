@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Student Log</title>
     <meta charset="UTF-8" />
     <!-- Black shadow -->
@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
-  <body onload="testMe()" class="font-sans bg-purple-700 dark:bg-red-400">
+  <body onload="testMe()" class="font-sans bg-uvu dark:bg-red-400">
     <form class="m-10 md:m-20">
       <div id="courseDiv" class="md:flex">
         <select
@@ -122,6 +122,18 @@
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              uvu: '#275d38',
+            },
+          },
+        },
+      };
+    </script>
     <script src="jQL.js"></script>
     <script src="script.js"></script>
     <!-- <script src="test_script.js"></script> -->
