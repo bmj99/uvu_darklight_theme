@@ -1,11 +1,18 @@
 module.exports = {
+  content: [],
   theme: {
     colors: {
-      tahiti: {
-        light: '#67e8f9',
-        DEFAULT: '#275d38',
-        dark: '#0e7490',
-      },
+      uvu: '#275d38',
+      blue: '#1fb6ff',
+      purple: '#7e5bef',
+      pink: '#ff49db',
+      orange: '#ff7849',
+      green: '#13ce66',
+      yellow: '#ffc82c',
+      'gray-dark': '#273444',
+      gray: '#8492a6',
+      'gray-light': '#d3dce6',
     },
   },
+  plugins: [],
 };
