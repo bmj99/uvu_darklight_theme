@@ -60,7 +60,7 @@
           "
         />
 
-        <div>
+        <div class="mb-5">
           <label
             for="theme-toggle"
             class="inline-flex relative items-center cursor-pointer"
@@ -71,61 +71,62 @@
               id="theme-toggle"
               class="sr-only peer"
             />
-            <span
-              class="ml-3 text-3xl font-medium text-gray-900 dark:text-gray-300"
+            <span class="ml-3 text-3xl text-gray-900 dark:text-gray-300"
               ><i class="fa-solid fa-circle-half-stroke"></i>
             </span>
           </label>
         </div>
       </div>
-      <!-- <br /> -->
-      <!-- <div class="lg:flex"> -->
-      <div id="logsDisplayDiv" class="p-3 bg-purple-400 rounded mb-5">
-        <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="pb-3 text-xl">
-          Student Logs
-        </h3>
-        <ul id="logsDisplay" data-cy="logs"></ul>
-      </div>
-
-      <div id="newLogDiv" class="p-3 bg-purple-400 rounded">
-        <h3 class="pb-3 text-xl">New Log</h3>
-        <textarea
-          id="newLogText"
-          style="height: 75px"
-          aria-label="add log textarea"
-          data-cy="log_textarea"
-          placeholder="Today, I ..."
-          class="
-            p-3
-            rounded
-            bg-purple-200
-            border-l-4 border-purple-500
-            w-full
-            mb-3
-          "
-        ></textarea>
-        <br />
-
-        <button
-          type="button"
-          id="addLogBtn"
-          data-cy="add_log_btn"
-          class="
-            rounded-full
-            bg-uvu-green
-            text-white
-            font-rajdhani
-            pl-5
-            pr-5
-            p-2
-            hover:bg-uvu-green-d2
-          "
-          disabled
+      <div class="lg:flex">
+        <div
+          id="logsDisplayDiv"
+          class="p-3 bg-purple-400 rounded mb-5 lg:w-2/3 lg:mr-5"
         >
-          Add Log
-        </button>
+          <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay" class="pb-3 text-xl">
+            Student Logs
+          </h3>
+          <ul id="logsDisplay" data-cy="logs"></ul>
+        </div>
+
+        <div id="newLogDiv" class="p-3 bg-purple-400 rounded lg:w-1/3">
+          <h3 class="pb-3 text-xl">New Log</h3>
+          <textarea
+            id="newLogText"
+            style="height: 75px"
+            aria-label="add log textarea"
+            data-cy="log_textarea"
+            placeholder="Today, I ..."
+            class="
+              p-3
+              rounded
+              bg-purple-200
+              border-l-4 border-purple-500
+              w-full
+              mb-3
+            "
+          ></textarea>
+          <br />
+
+          <button
+            type="button"
+            id="addLogBtn"
+            data-cy="add_log_btn"
+            class="
+              rounded-full
+              bg-uvu-green
+              text-white
+              font-rajdhani
+              pl-5
+              pr-5
+              p-2
+              hover:bg-uvu-green-d2
+            "
+            disabled
+          >
+            Add Log
+          </button>
+        </div>
       </div>
-      <!-- </div> -->
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
