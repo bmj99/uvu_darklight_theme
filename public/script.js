@@ -150,7 +150,7 @@ async function displayLogs(course, uvuId) {
         `Retrieved Logs\nLog Number: ${log}\nLog Date: ${logs[log].date}\nLog Text: ${logs[log].text}\n`
       );
 
-      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-purple-500 pl-2 pb-2 m-1 bg-purple-300 hover:bg-purple-500 hover:border-purple-600 rounded">
+      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-uvu-green pl-2 pb-2 m-1 bg-uvu-grey hover:bg-uvu-green-l3 hover:border-uvu-green-d2 text-uvu-grey-d2 rounded">
       <div><small>${logs[log].date}</small></div>
       <pre class="whitespace-pre-wrap"><p>${logs[log].text}</p></pre>
       </li>`;
