@@ -12,7 +12,7 @@
     <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
-  <body onload="testMe()" class="font-sans bg-uvu-green dark:bg-uvu-grey-d2">
+  <body onload="testMe()" class="font-sans bg-white dark:bg-uvu-grey-d2">
     <form class="m-10 md:m-20">
       <div id="courseDiv" class="md:flex">
         <select
@@ -128,6 +128,10 @@
         darkMode: 'class',
         theme: {
           extend: {
+            fontFamily: {
+              sans: [Arial],
+              header: [Rajdhani],
+            },
             colors: {
               'uvu-green': '#275d38',
               'uvu-green-l3': '#6f937a',
@@ -138,7 +142,7 @@
               'uvu-grey': '#e8e8e8',
               'uvu-grey-l1': '#f9f9f9',
               'uvu-grey-d1': '#545454',
-              'uvu-grey-d2': '#b2b2b2',
+              'uvu-grey-d2': '#2b2b2b',
             },
           },
         },
