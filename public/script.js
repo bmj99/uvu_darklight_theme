@@ -7,10 +7,13 @@ $('#theme-toggle').on('click', function () {
     // localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
     console.log(`Theme changed to Light Mode!`);
     $('html').removeClass('dark');
+    document.cookie = 'userThemePref=light';
   } else {
     console.log(`Theme changed to Dark Mode!`);
     $('html').addClass('dark');
+    document.cookie = 'userThemePref=dark';
   }
+  console.log(`User Preference: ${document.cookie}`);
 });
 
 // NOTE: As per Wagstaff's in-class instructions, copied this function from this website: https://www.tutorialspoint.com/how-to-create-guid-uuid-in-javascript
@@ -194,6 +197,21 @@ async function initializeCoursesDropDown() {
   }
 }
 
+function setTheme() {
+  let userPref = document.cookie.substring(14);
+  if (userPref == 'dark') {
+    $('html').addClass('dark');
+  }
+
+  console.log(`User Preference: ${userPref}`);
+}
+
+function setup() {
+  console.debug("We're loaded, let's gooooooooo");
+  initializeCoursesDropDown();
+  setTheme();
+}
+
 function testMe() {
   console.log('Test Mode!');
   initializeCoursesDropDown();
@@ -202,4 +220,5 @@ function testMe() {
   document.getElementById('addLogBtn').disabled = false;
   // let themeToggle = document.getElementById('theme-toggle').value;
   // console.log(`Theme Toggle value: ${themeToggle}`);
+  setTheme();
 }
