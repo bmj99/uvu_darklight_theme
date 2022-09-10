@@ -2,28 +2,21 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Student Log</title>
     <meta charset="UTF-8" />
-    <!-- Black shadow -->
-    <!-- <link rel="icon" href="https://i.imgur.com/HzPXa9x.png" />  -->
-    <!-- White shadow -->
-    <!-- <link rel="icon" href="https://i.imgur.com/xU6O2NI.png" /> -->
     <link
       rel="icon"
-      href="https://stackblitz.com/files/json-server-r4hsrz/github/bmj99/uvu_darklight_theme/main/public/img/uvu_icon_green.png"
+      href="https://raw.githubusercontent.com/bmj99/uvu_darklight_theme/main/public/img/uvu_mono_green.png"
     />
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <!-- Adding FontAwesome CDN -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    /> -->
   </head>
   <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
-  <body onload="testMe()" class="font-sans bg-white dark:bg-uvu-grey-d2">
+  <body
+    onload="testMe()"
+    class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"
+  >
     <form class="m-10 md:m-20">
       <div id="courseDiv" class="md:flex">
+        <!-- Choose Course Selection-->
         <select
           aria-label="Select Course"
           id="course"
@@ -43,6 +36,7 @@
           <option selected value="">Choose Course</option>
         </select>
 
+        <!-- UVU ID Text Field-->
         <input
           type="text"
           id="uvuId"
@@ -64,34 +58,26 @@
           "
         />
 
-        <!-- FIX ME: Gotta remove the font awesome as that's a 3rd party library -->
-        <div class="mb-5">
-          <label for="theme-toggle" class="cursor-pointer">
-            <input
-              type="checkbox"
-              value=""
-              id="theme-toggle"
-              class="sr-only peer"
-            />
-            <div
-              class="
-                w-8
-                h-8
-                rounded-full
-                bg-uvu-grey-l1
-                border-4 border-uvu-green
-                hover:bg-uvu-green
-                dark:bg-uvu-green-l2
-                dark-hover:bg-uvu-green-l3 dark-hover:border-uvu-l3
-              "
-            ></div>
-            <span class="ml-3 text-3xl text-gray-900 dark:text-gray-300">
-              <!-- <i class="fa-solid fa-circle-half-stroke"></i> -->
-            </span>
-          </label>
-        </div>
+        <!-- Toggle Theme Button -->
+        <button
+          type="button"
+          id="theme-toggle"
+          class="
+            p-3
+            bg-uvu-green
+            text-uvu-grey
+            rounded-full
+            mr-5
+            mb-5
+            cursor-pointer
+            hover:bg-uvu-green-d2
+          "
+        >
+          Toggle Theme
+        </button>
       </div>
       <div class="lg:flex">
+        <!-- Display Logs Div -->
         <div
           id="logsDisplayDiv"
           class="
@@ -105,6 +91,7 @@
             h-full
           "
         >
+          <!-- Student Logs Header -->
           <h3
             id="uvuIdDisplay"
             data-cy="uvuIdDisplay"
@@ -115,6 +102,7 @@
           <ul id="logsDisplay" data-cy="logs"></ul>
         </div>
 
+        <!-- New Log Div -->
         <div
           id="newLogDiv"
           class="
@@ -126,6 +114,7 @@
             border-2 border-uvu-grey
           "
         >
+          <!-- New Log Textbox -->
           <h3 class="pb-3 text-xl">New Log</h3>
           <textarea
             id="newLogText"
@@ -145,6 +134,7 @@
           ></textarea>
           <br />
 
+          <!-- Add Log Button -->
           <button
             type="button"
             id="addLogBtn"
@@ -174,6 +164,12 @@
         darkMode: 'class',
         theme: {
           extend: {
+            backgroundImage: {
+              'uvu-light':
+                "url('https://raw.githubusercontent.com/bmj99/uvu_darklight_theme/main/public/img/uvu_bg_green_light.jpg')",
+              'uvu-dark':
+                "url('https://raw.githubusercontent.com/bmj99/uvu_darklight_theme/main/public/img/uvu_bg_green_dark.jpg')",
+            },
             colors: {
               'uvu-green': '#275d38',
               'uvu-green-l3': '#6f937a',
@@ -197,40 +193,16 @@
 </html>
 
 <!-- ------------------------------------------------------------------------------ -->
-<!-- Tailwind Axios jQueryLite Requirements -->
+<!-- UVU Brand Dark/Like Practicum Requirements -->
 <!-- ------------------------------------------------------------------------------ -->
 
-<!-- TODO: 7. Strip out all your custom CSS. Use only Tailwind for styling. Use a CDN. Do a different style GUI from your Vanilla Practicum. We want to see you have variety. -->
-<!-- TODO: 8. Strip out your fetch code. Use Axios instead. -->
-<!-- DONE: 9. Write and use your own lite version of jQuery. -->
-<!-- DONE: 10. Create and use your own favicon. (StackBlitz does not allow pictures to be uploaded, so I used imgur instead) -->
-
-<!-- ------------------------------------------------------------------------------ -->
-<!-- Vanilla Requirements: -->
-<!-- ------------------------------------------------------------------------------ -->
-
-<!-- TODO: move all TODOs that done above to down below here and change the label to DONE:. -->
-<!-- DONE: set the lang attribute to American English -->
-<!-- DONE: set the characterset to utf8 -->
-<!-- DONE: temporarily use stackoverflow's favicon. "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"-->
-<!-- DONE: Load your CSS file -->
-<!-- DONE: The following options are currently static values to show you sample data.  -->
-<!-- DONE: Don't show the uvu id text input box until a course was selected above. -->
-<!-- DONE: If course ever becomes unselected, don't show the uvu id text input box.-->
-<!-- DONE: write `10234567` as sample data on the input field below  -->
-<!-- DONE: Ensure the character length never exceeds 8 -->
-<!-- DONE: Only numbers, no letters or other characters-->
-<!-- DONE: When character length reaches 8 and it's only digits, fire off ajax request, if 200 or 304, display results, else appropriately guide the user. -->
-<!-- DONE: The following options are currently static values to show you an example.  -->
-<!-- You must replace them with dynamic data by ajaxing GET https://json-server-ft3qa5--3000.local.webcontainer.io/logs?courseId=<courseID>&uvuId=<uvuID> -->
-<!-- DONE: Click anywhere on the log to toggle visibility of the log (text only, not the date)-->
-<!-- DONE: Button should be disabled until there are logs displayed -->
-<!-- DONE: When the button is clicked, -->
-<!--   1. Use fetch to POST the new log above and  -->
-<!--   2. Add it to the displayed list -->
-<!-- DONE: Script tag to your javascript file -->
-<!-- DONE: add appropriate comments you feel are necessary, if any, for the next coder to understand -->
-<!-- DONE: make it look awesome. */
-/*   DONE: make it responsive. */ -->
-<!-- DONE: Wire up the app's behavior here.
-//   DONE: The TODOs are listed in index.html -->
+<!-- DONE: Make it look like it belongs to the University -->
+<!-- DONE: Use only UVU official color pallet -->
+<!-- DONE: Use only UVU official fonts -->
+<!-- DONE: Use UVU suggested design guidelines -->
+<!-- DONE: Use UVU favicon -->
+<!-- DONE: Put at least one UVU graphic on the page -->
+<!-- DONE: Design how the user will pick light or dark mode in the gui -->
+<!-- DONE: Change the display when the user changes mode -->
+<!-- TODO: Store the users mode pref in cookie or local storage -->
+<!-- TODO: Print to the console the User, browser, and OS preferences -->

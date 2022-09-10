@@ -1,15 +1,15 @@
 let statusCode = 0;
 
 // Toggle the theme colors
-$('#theme-toggle').on('change', function () {
+$('#theme-toggle').on('click', function () {
   // console.log(`Theme toggle value: ${this.checked}`);
-  if (this.checked) {
+  if ($('html').hasClass('dark')) {
     // localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    console.log(`Theme changed to Dark Mode!`);
-    $('html').addClass('dark');
-  } else {
     console.log(`Theme changed to Light Mode!`);
     $('html').removeClass('dark');
+  } else {
+    console.log(`Theme changed to Dark Mode!`);
+    $('html').addClass('dark');
   }
 });
 
