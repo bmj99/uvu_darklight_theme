@@ -13,7 +13,7 @@ $('#theme-toggle').on('click', function () {
     $('html').addClass('dark');
     document.cookie = 'userThemePref=dark';
   }
-  console.log(`User Preference: ${document.cookie}`);
+  console.debug(`Set User Preference Cookie to: ${document.cookie}`);
 });
 
 // NOTE: As per Wagstaff's in-class instructions, copied this function from this website: https://www.tutorialspoint.com/how-to-create-guid-uuid-in-javascript
@@ -153,7 +153,7 @@ async function displayLogs(course, uvuId) {
         `Retrieved Logs\nLog Number: ${log}\nLog Date: ${logs[log].date}\nLog Text: ${logs[log].text}\n`
       );
 
-      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-uvu-green pl-2 pb-2 m-1 bg-uvu-grey hover:bg-uvu-green-l3 hover:border-uvu-green-d2 text-uvu-grey-d2 rounded">
+      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-uvu-green pl-2 pb-2 m-1 bg-uvu-grey hover:bg-uvu-green-l1 hover:border-uvu-green-d2 hover:text-uvu-grey text-uvu-grey-d2 rounded">
       <div><small>${logs[log].date}</small></div>
       <pre class="whitespace-pre-wrap"><p>${logs[log].text}</p></pre>
       </li>`;
@@ -197,13 +197,28 @@ async function initializeCoursesDropDown() {
   }
 }
 
+// Fix this function!
 function setTheme() {
   let userPref = document.cookie.substring(14);
-  if (userPref == 'dark') {
+  let browserPref = window.matchMedia;
+  let osPreferenceIsDark = window.matchMedia(
+    '(prefers-color-scheme:dark)'
+  ).matches;
+  if (userPref == 'dark' || osPreferenceIsDark) {
     $('html').addClass('dark');
   }
+  if (
+    localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    console.log('Hi!');
+  }
 
-  console.log(`User Preference: ${userPref}`);
+  console.log(
+    `User Preference: ${userPref}\nBrowser Preference: ${browserPref}\nOS Preference: ${osPreferenceIsDark}`
+  );
+  console.log(browserPref);
 }
 
 function setup() {
@@ -218,7 +233,5 @@ function testMe() {
   displayLogs('cs4660', '10111111');
   document.getElementById('uvuId').style.display = 'inline-block';
   document.getElementById('addLogBtn').disabled = false;
-  // let themeToggle = document.getElementById('theme-toggle').value;
-  // console.log(`Theme Toggle value: ${themeToggle}`);
   setTheme();
 }
