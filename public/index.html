@@ -9,11 +9,14 @@
       href="https://raw.githubusercontent.com/bmj99/uvu_darklight_theme/main/public/img/uvu_mono_green.png"
     />
   </head>
-  <!-- <body onload="setup()" class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"> -->
   <body
-    onload="testMe()"
+    onload="setup()"
     class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"
   >
+    <!-- <body
+    onload="testMe()"
+    class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"
+  > -->
     <form
       class="
         p-5
@@ -33,7 +36,7 @@
           data-cy="course_select"
           class="
             p-3
-            bg-uvu-green
+            bg-uvu-green-l2
             text-uvu-grey
             rounded-full
             mr-5
@@ -60,11 +63,11 @@
             hidden
             rounded-full
             border-2 border-uvu-green
-            placeholder-gray-500
+            placeholder-uvu-grey-d1
             mb-5
             mr-5
             hover:bg-uvu-grey
-            dark:bg-uvu-green dark:text-uvu-grey-l1
+            dark:bg-uvu-green-l1 dark:text-uvu-grey
           "
         />
 
@@ -74,7 +77,7 @@
           id="theme-toggle"
           class="
             p-3
-            bg-uvu-green
+            bg-uvu-green-l2
             text-uvu-grey
             rounded-full
             mr-5
@@ -117,7 +120,9 @@
           class="p-3 rounded lg:w-1/3 bg-uvu-grey-l1 dark:bg-uvu-green-d1"
         >
           <!-- New Log Textbox -->
-          <h3 class="pb-3 text-xl">New Log</h3>
+          <h3 class="pb-3 text-xl text-uvu-green dark:text-uvu-grey">
+            New Log
+          </h3>
           <textarea
             id="newLogText"
             style="height: 75px"
@@ -132,6 +137,7 @@
               w-full
               h-full
               mb-3
+              dark:bg-uvu-green-l2 dark:text-uvu-grey
             "
           ></textarea>
           <br />
@@ -143,7 +149,7 @@
             data-cy="add_log_btn"
             class="
               rounded-full
-              bg-uvu-green
+              bg-uvu-green-l2
               text-uvu-grey
               font-rajdhani
               pl-5

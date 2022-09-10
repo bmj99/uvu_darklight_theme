@@ -153,7 +153,7 @@ async function displayLogs(course, uvuId) {
         `Retrieved Logs\nLog Number: ${log}\nLog Date: ${logs[log].date}\nLog Text: ${logs[log].text}\n`
       );
 
-      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-uvu-green pl-2 pb-2 m-1 bg-uvu-grey hover:bg-uvu-green-l1 hover:border-uvu-green-d2 hover:text-uvu-grey text-uvu-grey-d2 rounded">
+      let newLogHtml = `<li id="logId${log}" class="logEntry cursor-pointer border-l-4 border-uvu-green pl-2 pb-2 m-1 bg-uvu-grey hover:bg-uvu-green-l1 hover:border-uvu-green-d2 hover:text-uvu-grey text-uvu-grey-d2 dark:bg-uvu-green-l2 rounded">
       <div><small>${logs[log].date}</small></div>
       <pre class="whitespace-pre-wrap"><p>${logs[log].text}</p></pre>
       </li>`;
@@ -200,25 +200,29 @@ async function initializeCoursesDropDown() {
 // Fix this function!
 function setTheme() {
   let userPref = document.cookie.substring(14);
-  let browserPref = window.matchMedia;
-  let osPreferenceIsDark = window.matchMedia(
-    '(prefers-color-scheme:dark)'
-  ).matches;
-  if (userPref == 'dark' || osPreferenceIsDark) {
-    $('html').addClass('dark');
+  let browserPref = 'unknown';
+  let osPref = 'unknown';
+  let setToDark = false;
+  if (userPref === 'dark') {
+    setToDark = true;
   }
   if (
-    localStorage.getItem('color-theme') === 'dark' ||
-    (!('color-theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme:dark)').matches
   ) {
-    console.log('Hi!');
+    setToDark = true;
+    osPref = 'dark';
+  } else {
+    osPref = 'light';
+  }
+
+  if (setToDark) {
+    $('html').addClass('dark');
   }
 
   console.log(
-    `User Preference: ${userPref}\nBrowser Preference: ${browserPref}\nOS Preference: ${osPreferenceIsDark}`
+    `User Preference: ${userPref}\nBrowser Preference: ${browserPref}\nOS Preference: ${osPref}`
   );
-  console.log(browserPref);
 }
 
 function setup() {
