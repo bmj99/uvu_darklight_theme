@@ -9,12 +9,21 @@
       href="https://raw.githubusercontent.com/bmj99/uvu_darklight_theme/main/public/img/uvu_mono_green.png"
     />
   </head>
-  <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-gray-700"> -->
+  <!-- <body onload="initializeCoursesDropDown()" class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"> -->
   <body
     onload="testMe()"
     class="font-sans bg-uvu-light dark:bg-uvu-dark bg-cover bg-center bg-fixed"
   >
-    <form class="m-10 md:m-20">
+    <form
+      class="
+        p-5
+        m-10
+        md:m-20
+        bg-white bg-opacity-50
+        dark:bg-uvu-grey-d2 dark:bg-opacity-50
+        rounded
+      "
+    >
       <div id="courseDiv" class="md:flex">
         <!-- Choose Course Selection-->
         <select
@@ -91,7 +100,7 @@
             h-full
           "
         >
-          <!-- Student Logs Header -->
+          <!-- Student Logs -->
           <h3
             id="uvuIdDisplay"
             data-cy="uvuIdDisplay"
@@ -181,6 +190,12 @@
               'uvu-grey-l1': '#f9f9f9',
               'uvu-grey-d1': '#545454',
               'uvu-grey-d2': '#2b2b2b',
+              'uvu-fern': '#78be20',
+              'uvu-fern-l3': '#f2f9e9',
+              'uvu-fern-l2': '#c9e5a6',
+              'uvu-fern-l1': '#a1d263',
+              'uvu-fern-d1': '#548516',
+              'uvu-fern-d2': '#304c0d',
             },
           },
         },
